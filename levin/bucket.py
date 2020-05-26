@@ -149,6 +149,10 @@ class Bucket:
             if 'adr' not in peer or 'addr' not in peer['adr'].entries:
                 continue
 
+            # dimaz quick and dirty debug on no last_seen data
+            if 'last_seen' not in peer:
+                peer['last_seen'] = 0
+
             addr = peer['adr'].entries['addr'].entries
             last_seen, m_ip, m_port = peer['last_seen'], addr['m_ip'], addr['m_port']
 

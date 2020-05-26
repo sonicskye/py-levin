@@ -38,7 +38,7 @@ while 1:
         sys.stderr.write("Invalid response; exiting\n")
         break
 
-    bucket = Bucket.from_buffer(signature=buffer, sock=sock)
+    bucket = Bucket.from_buffer(signature=buffer, sock=sock, verbose=False)
     buckets.append(bucket)
 
     if bucket.command == 1001:
